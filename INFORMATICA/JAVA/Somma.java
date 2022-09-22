@@ -24,6 +24,6 @@ class SOMMA {
                 System.out.println("ce stato un errore");
                 }
                 Somma = Numero1 + Numero2;
-                System.out.println(Somma);
+                System.out.println("La Somma è :" + Somma);
         }
 }
