@@ -12,23 +12,24 @@ class Today {
         int SecondiInp;
         int ore =3600;
         int minuti =60;
-        int Finale =0;
-        int Finale1 =0;
-        int Finale3 =0;
-        System.out.println("Inserisci un numero di secondi");
-        try {
-            NumeroLetto = tastiera.readLine();
-            SecondiInp = Integer.valueOf(NumeroLetto).intValue();
-        }
-        catch(Exception exception) {
-            System.out.println("Ce stato un errore");
-            return;
-        }
-        Finale = SecondiInp/ore;
-        Finale1 = SecondiInp/minuti;
-        Finale3 = SecondiInp;
-        System.out.println("Il tempo in ore è:" + Finale);
-        System.out.println("Il tempo in minuti è:" + Finale1);
-        System.out.println("Il tempo in secondi è:" + Finale3);
+        int kara;
+        int dara;
+            System.out.println("Inserisci i secondi da convertire in ora minuti e secondi");
+            try {
+                NumeroLetto = tastiera.readLine();
+                SecondiInp = Integer.valueOf(NumeroLetto).intValue();
+            }
+            catch(Exception exception) {
+                System.out.println("Ce stato un errore");
+                return;
+            }
+            kara = SecondiInp/60;
+            dara = kara%60;
+
+            
+            System.out.println("test: " + kara);
+
+       /* System.out.println("Il tempo in ore è:" + Finale);       
+        */
     }
 }
