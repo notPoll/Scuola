@@ -13,6 +13,7 @@ class Today {
         int ore =3600;
         int minuti =60;
         int kara;
+        int para;
         int dara;
             System.out.println("Inserisci i secondi da convertire in ora minuti e secondi");
             try {
@@ -24,12 +25,10 @@ class Today {
                 return;
             }
             kara = SecondiInp/60;
-            dara = kara%60;
+            dara = SecondiInp/ore;
+            para = SecondiInp;
 
             
-            System.out.println("test: " + kara);
-
-       /* System.out.println("Il tempo in ore è:" + Finale);       
-        */
+            System.out.println("test: " + dara + ":" + kara + ":" + para );
     }
 }
