@@ -26,8 +26,6 @@ class Today {
             kara = SecondiInp/60;
             dara = SecondiInp/ore;
             para = SecondiInp;
-
-            
             System.out.println("test: " + dara + ":" + kara + ":" + para );
     }
 }
