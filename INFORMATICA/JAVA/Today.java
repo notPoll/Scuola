@@ -10,10 +10,9 @@ class Today {
         BufferedReader tastiera = new BufferedReader(input);
         String NumeroLetto;
         int SecondiInp;
-        int ore =3600;
-        int kara;
-        int para;
-        int dara;
+        int ore = 0;
+        int minuti = 0;
+        int secondi = 0;
             System.out.println("Inserisci i secondi da convertire in ora minuti e secondi");
             try {
                 NumeroLetto = tastiera.readLine();
@@ -23,9 +22,9 @@ class Today {
                 System.out.println("Ce stato un errore");
                 return;
             }
-            kara = SecondiInp/60;
-            dara = SecondiInp/ore;
-            para = SecondiInp;
-            System.out.println("test: " + dara + ":" + kara + ":" + para );
+            ore = SecondiInp/3600;
+            minuti = SecondiInp%3600/60;
+            secondi = SecondiInp%60;
+            System.out.println("La conversione è: " + ore + ":" + minuti + ":" + secondi );
     }
 }
