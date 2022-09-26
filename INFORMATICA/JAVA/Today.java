@@ -11,7 +11,6 @@ class Today {
         String NumeroLetto;
         int SecondiInp;
         int ore =3600;
-        //int minuti =60;
         int kara;
         int para;
         int dara;
