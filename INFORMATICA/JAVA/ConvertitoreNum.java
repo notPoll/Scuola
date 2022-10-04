@@ -4,7 +4,7 @@
 // 60 secondi = 1 minuto
 // 1 secondo = 1 secondo
 import java.io.*;
-class Today {
+class ConvertitoreNum {
      public static void main(String[] args) {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
