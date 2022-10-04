@@ -3,10 +3,11 @@ b=$2
 FILE=$3
 if [ $a -gt $b ]
 then
-if [ $FILE="" ]
+if [ -e $FILE ]
 then
+cat "$FILE"
+else
 ls -l
 fi
-cat "$FILE"
 else echo " $b è maggiore di $a"
 fi
