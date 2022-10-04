@@ -12,7 +12,7 @@ class main {
     public static void main(String args[]) {
     Cerchio tavolo;
     tavolo = new Cerchio();
-    tavolo.setRaggio(0,75);
+    tavolo.setRaggio(1);
     System.out.println("L'area del tavolo è" + tavolo.area());
     }
 }
