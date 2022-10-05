@@ -6,13 +6,13 @@ class Cerchio {
     }
     public double area() {
         return (raggio * raggio * Math.PI);
-    }
- }
+    } 
+}
 class main {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
     Cerchio tavolo;
     tavolo = new Cerchio();
-    tavolo.setRaggio(1);
+    tavolo.setRaggio(0.75);
     System.out.println("L'area del tavolo è" + tavolo.area());
     }
 }
