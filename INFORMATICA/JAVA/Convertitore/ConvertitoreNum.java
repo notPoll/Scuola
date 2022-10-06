@@ -1,9 +1,4 @@
 package Convertitore;
-// costruire un programma che dopo aver acquisito l'ora del giorno espressa come numero di secondi 
-// convertire il varo in ore minuti e secondi
-// 3600 secondi = 1 ora
-// 60 secondi = 1 minuto
-// 1 secondo = 1 secondo
 import java.io.*;
 class ConvertitoreNum {
      public static void main(String[] args) {

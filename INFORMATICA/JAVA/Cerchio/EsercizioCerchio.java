@@ -1,3 +1,5 @@
+package Cerchio;
+
 import java.io.*;
 class Cerchio {
     private double raggio;
@@ -8,11 +10,11 @@ class Cerchio {
         return (raggio * raggio * Math.PI);
     } 
 }
-class main {
+class MaindelCerchio {
     public static void main(String[] args) {
     Cerchio tavolo;
     tavolo = new Cerchio();
     tavolo.setRaggio(0.75);
-    System.out.println("L'area del tavolo è" + tavolo.area());
+    System.out.println("L'area del tavolo è: " + tavolo.area());
     }
 }
