@@ -1,5 +1,4 @@
 package Cerchio;
-
 import java.io.*;
 class Cerchio {
     private double raggio;
