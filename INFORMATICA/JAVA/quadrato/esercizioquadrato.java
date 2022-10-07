@@ -1,5 +1,7 @@
 package quadrato;
 import java.io.*;
+
+import javax.management.QueryEval;
 class quadrato {
     private double lato;
                         public void setLato(double l) {
@@ -23,8 +25,7 @@ class quadrato {
         }
         else {
             return false;
-        }
-            
+        }  
     }
 }
 class mainquad {
@@ -32,19 +33,19 @@ class mainquad {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
         String quadratoget;
-        int q1;
-        int q2;
+        int Lato1;
+        int Lato2;  
         System.out.println("Inserisci un lato per il tuo quadrato");
             try {
                 quadratoget = tastiera.readLine();
-                q1 = Integer.valueOf(quadratoget).intValue();
+                Lato1 = Integer.valueOf(quadratoget).intValue();
             }
                     catch(Exception exception) {
                         System.out.println("ce stato un errore");
                     }
                         try {
                             quadratoget = tastiera.readLine();
-                            q2 = Integer.valueOf(quadratoget).intValue();
+                            Lato2 = Integer.valueOf(quadratoget).intValue();
                         }
                                 catch(Exception exception) {
                                     System.out.println("Ce stato un errore");
