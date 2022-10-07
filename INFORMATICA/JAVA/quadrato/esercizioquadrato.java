@@ -18,9 +18,9 @@ class quadrato {
             System.out.println("lato: " + lato);
         }
     public boolean equals(quadrato q1) {
-        if(lato==q1.lato) {
-            return true;
-        }
+            if(lato==q1.lato) {
+                return true;
+            }
         else {
             return false;
         }  
