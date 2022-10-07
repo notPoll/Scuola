@@ -1,7 +1,5 @@
 package quadrato;
 import java.io.*;
-
-import javax.management.QueryEval;
 class quadrato {
     private double lato;
                         public void setLato(double l) {
