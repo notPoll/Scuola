@@ -31,22 +31,36 @@ class mainquad {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
         String quadratoget;
-        int Lato1;
-        int Lato2;  
-        System.out.println("Inserisci un lato per il tuo quadrato");
+        quadrato Q1;
+        quadrato Q2;
+        int lato1 = 0;
+        int lato2 = 0;  
+        System.out.println("Inserisci il lato del tuo primo quadrato");
             try {
                 quadratoget = tastiera.readLine();
-                Lato1 = Integer.valueOf(quadratoget).intValue();
+                lato1 = Integer.valueOf(quadratoget).intValue();
             }
                     catch(Exception exception) {
-                        System.out.println("ce stato un errore");
+            System.out.println("ce stato un errore");
                     }
-                        try {
-                            quadratoget = tastiera.readLine();
-                            Lato2 = Integer.valueOf(quadratoget).intValue();
-                        }
-                                catch(Exception exception) {
-                                    System.out.println("Ce stato un errore");
-                                }
+                        System.out.println("Inserisci il lato del secondo quadrato");
+                            try {
+                                quadratoget = tastiera.readLine();
+                                lato2 = Integer.valueOf(quadratoget).intValue();
+                            }
+                                    catch(Exception exception) {
+                                        System.out.println("Ce stato un errore");
+                                    }
+                                        Q1 = new quadrato();
+                                        Q2 = new quadrato();
+                                        Q1.setLato(lato1);
+                                        Q2.setLato(lato2);
+                                
+
+        System.out.println("L'area del primo quadrato è: " + Q1.area());
+        System.out.println("L'area del secondo quadrato è: " + Q2.area());
+        System.out.println("Il perimetro del primo quadrato è: " + Q1.perimetro());
+        System.out.println("Il perimetro del primo quadrato è: " + Q2.perimetro());
+        System.out.println("Verificando se Il quadrato 1 e il quadrato 2 sono uguali..." +  Q1.equals(Q2));
     }
 }
