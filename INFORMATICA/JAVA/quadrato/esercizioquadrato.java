@@ -40,25 +40,25 @@ class mainquad {
                 quadratoget = tastiera.readLine();
                 lato1 = Integer.valueOf(quadratoget).intValue();
             }
-                    catch(Exception exception) {
-            System.out.println("ce stato un errore");
-                    }
+                catch(Exception exception) {
+                    System.out.println("ce stato un errore");
+                }
                         System.out.println("Inserisci il lato del secondo quadrato");
-                            try {
-                                quadratoget = tastiera.readLine();
-                                lato2 = Integer.valueOf(quadratoget).intValue();
+                        try {
+                            quadratoget = tastiera.readLine();
+                            lato2 = Integer.valueOf(quadratoget).intValue();
+                        }
+                            catch(Exception exception) {
+                                System.out.println("Ce stato un errore");
                             }
-                                    catch(Exception exception) {
-                                        System.out.println("Ce stato un errore");
-                                    }
-                                    Q1 = new quadrato();
-                                        Q2 = new quadrato();
-                                        Q1.setLato(lato1);
-                                    Q2.setLato(lato2);
-        System.out.println("L'area del primo quadrato è: " + Q1.area());
-            System.out.println("L'area del secondo quadrato è: " + Q2.area());
-                System.out.println("Il perimetro del primo quadrato è: " + Q1.perimetro());
-            System.out.println("Il perimetro del primo quadrato è: " + Q2.perimetro());
-        System.out.println("Verificando se Il quadrato 1 e il quadrato 2 sono uguali..." +  Q1.equals(Q2));
+                                Q1 = new quadrato();
+                                Q2 = new quadrato();
+                                Q1.setLato(lato1);
+                                Q2.setLato(lato2);
+                    System.out.println("L'area del primo quadrato è: " + Q1.area());
+                System.out.println("L'area del secondo quadrato è: " + Q2.area());
+            System.out.println("Il perimetro del primo quadrato è: " + Q1.perimetro());
+        System.out.println("Il perimetro del primo quadrato è: " + Q2.perimetro());
+    System.out.println("Verificando se Il quadrato 1 e il quadrato 2 sono uguali..." +  Q1.equals(Q2));
     }
 }
