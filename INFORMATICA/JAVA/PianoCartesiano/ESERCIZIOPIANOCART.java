@@ -1,6 +1,7 @@
 package PianoCartesiano;
+
 import java.io.*;
-public class Punto {
+public class Piano {
     private double puntox;
     private double puntoy;
     public void setX(double x) {
@@ -19,33 +20,65 @@ public class Punto {
                             System.out.println("punto x: " + puntox);
                             System.out.println("Punto y: " + puntoy);
                         }
-                                public boolean equalsy(Punto p2) {
-                                    if((puntoy==p2.puntoy) && (puntox==p2.puntox)) {
-                                        return true;
-                                    }
-                                    else 
-                                        return false;
+                            public boolean equalsy(Piano p2) {
+                                if((puntoy==p2.puntoy) && (puntox==p2.puntox)) {
+                                    return true;
                                 }
-                                public double Distanza(Punto p1) {
+                                else 
+                                    return false;
+                            }
+                                public double Distanza(Piano p1) {
                                    double d;
                                 d = Math.sqrt(Math.pow(p1.puntox - puntox,2) + Math.pow(p1.puntoy - puntoy,2));
                                 return d;
                                 }
 }
- public class MainPianoCartesiano {
+ public class MainPiano{
     public static void main(String[] args) {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
         double x1,x2,y1,y2;
-        Punto p1,p2;
+        Piano p1,p2;
         System.out.println("Inserisci la X");
         try {
-            string Numero = tastiera.readLine();
-                
+            String Numero = tastiera.readLine();
+            x1 = Double.valueOf(Numero).doubleValue();
         } 
-        catch (Exception e) {}
-        x1 = 
-        
+        catch (Exception e) {
+        System.out.println("ce stato un errore");
         }   
+            try {
+                String Numero = tastiera.readLine();
+                    x2 = Double.valueOf(Numero).doubleValue();
+            } 
+            catch (Exception e) {
+                System.out.println("ce stato un errore");
+            }
+                try {
+                    String Numero = tastiera.readLine();
+                        y1 = Double.valueOf(Numero).doubleValue();
+                } 
+                catch (Exception e) {
+                    System.out.println("ce stato un errore");
+                }
+                    try {
+                        String Numero = tastiera.readLine();
+                        y2 = Double.valueOf(Numero).doubleValue();
+                    } 
+                    catch (Exception e) {
+                        System.out.println("ce stato un errore");
+                    }
+                    p1.setX(x1);
+                    p1.setY(y1);
+                    p2.setX(x2);
+                    p2.setY(y2);
+
+                    if(p1.equals(p2)==true) {
+                    System.out.println("i punti sono uguali");
+                    }
+                        else {
+                            double d = p1.Distanza(p2);
+                        }
+    }   
         
 }
