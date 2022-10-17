@@ -79,6 +79,5 @@ public class Piano {
                         else {
                             double d = p1.Distanza(p2);
                         }
-    }   
-        
+    }  
 }
