@@ -68,10 +68,10 @@ public class Piano {
                     catch (Exception e) {
                         System.out.println("ce stato un errore");
                     }
-                    p1.setX(x1);
-                    p1.setY(y1);
-                    p2.setX(x2);
-                    p2.setY(y2);
+                        p1.setX(x1);
+                        p1.setY(y1);
+                        p2.setX(x2);
+                        p2.setY(y2);
 
                     if(p1.equals(p2)==true) {
                     System.out.println("i punti sono uguali");
