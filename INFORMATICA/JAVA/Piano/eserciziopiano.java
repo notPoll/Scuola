@@ -1,6 +1,6 @@
 package Piano;
 import java.io.*;
-public class piano {
+public class Piano {
     private double puntox;
     private double puntoy;
     public void setX(double x) {
@@ -19,25 +19,25 @@ public class piano {
                             System.out.println("punto x: " + puntox);
                             System.out.println("Punto y: " + puntoy);
                         }
-                            public boolean equalsy(eserciziopiano p2) {
+                            public boolean equalsy(Piano p2) {
                                 if((puntoy==p2.puntoy) && (puntox==p2.puntox)) {
                                     return true;
                                 }
                                 else 
                                     return false;
                             }
-                                public double Distanza(eserciziopiano p1) {
+                                public double Distanza(Piano p1) {
                                    double d;
                                 d = Math.sqrt(Math.pow(p1.puntox - puntox,2) + Math.pow(p1.puntoy - puntoy,2));
                                 return d;
                                 }
     }
-public class pianomain{
+public class PianoMain {
     public static void main(String[] args) {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
         double x1,x2,y1,y2;
-        eserciziopiano p1,p2;
+        Piano p1,p2;
         System.out.println("Inserisci la X");
         try {
             String Numero = tastiera.readLine();
