@@ -1,6 +1,6 @@
 package Potenza;
 import java.io.*;
-public class Potenza {
+class Potenza {
     private int Aele;
     private int Bele;
     //per prendere successivamente in input a (numero da elevare a b(potenza))
@@ -22,7 +22,7 @@ public class Potenza {
                         System.out.println("B elevatore " + Bele);
                     }
 }
-public class MainPotenza {
+class MainPotenza {
     public static void main(String[] args) {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
@@ -44,7 +44,6 @@ public class MainPotenza {
             } 
             catch (Exception e) {
                 System.out.println("ce stato un errore");             
-            }
-            
+            }  
     }
 }
