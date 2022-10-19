@@ -27,7 +27,7 @@ public class MainPotenza {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
         int A=0,B=0;
-        Potenza N,E;
+        //Potenza N,E;
         String Tra;
         System.out.println("Inserici il numero che vuoi elevare alla potenza: ");
         try {
@@ -45,6 +45,6 @@ public class MainPotenza {
             catch (Exception e) {
                 System.out.println("ce stato un errore");             
             }
-            for(
+            
     }
 }
