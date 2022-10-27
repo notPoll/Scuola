@@ -46,10 +46,35 @@ class MainPunto {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
         String NumeroLetto;
+        Double Ax , Ay;
+        Double Bx , By;
         System.out.println("Inserisci le cordinate A(x,y)");
         try {
             NumeroLetto= tastiera.readLine();
-        } catch (Exception e) {
+            Ax = Double.valueOf(NumeroLetto).doubleValue();
+        } 
+        catch (Exception e) {
+            System.out.println("Errore");
+        }
+        try {
+            NumeroLetto= tastiera.readLine();
+            Ay = Double.valueOf(NumeroLetto).doubleValue();
+        } 
+        catch (Exception e) {
+            System.out.println("Errore");
+        }
+        try {
+            NumeroLetto= tastiera.readLine();
+            Bx = Double.valueOf(NumeroLetto).doubleValue();
+        } 
+        catch (Exception e) {
+            System.out.println("Errore");
+        }
+        try {
+            NumeroLetto= tastiera.readLine();
+            By = Double.valueOf(NumeroLetto).doubleValue();
+        } 
+        catch (Exception e) {
             System.out.println("Errore");
         }
     }
