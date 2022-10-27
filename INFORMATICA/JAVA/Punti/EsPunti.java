@@ -50,6 +50,7 @@ class MainPunto {
         Double Bx , By;
         System.out.println("Inserisci le cordinate A(x,y)");
         try {
+            System.out.println("A(x): ");
             NumeroLetto= tastiera.readLine();
             Ax = Double.valueOf(NumeroLetto).doubleValue();
         } 
@@ -57,6 +58,7 @@ class MainPunto {
             System.out.println("Errore");
         }
         try {
+            System.out.println("A(y): ");
             NumeroLetto= tastiera.readLine();
             Ay = Double.valueOf(NumeroLetto).doubleValue();
         } 
@@ -64,6 +66,7 @@ class MainPunto {
             System.out.println("Errore");
         }
         try {
+            System.out.println("B(x): ");
             NumeroLetto= tastiera.readLine();
             Bx = Double.valueOf(NumeroLetto).doubleValue();
         } 
@@ -71,6 +74,7 @@ class MainPunto {
             System.out.println("Errore");
         }
         try {
+            System.out.println("B(y): ");
             NumeroLetto= tastiera.readLine();
             By = Double.valueOf(NumeroLetto).doubleValue();
         } 
