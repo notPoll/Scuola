@@ -1,7 +1,7 @@
 from tkinter import Y
 from turtle import color
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 def f(x,y):
     return np.sin(np.sqrt(x ** 2 + y ** 2))
 x = np.linspace(-6, 6, 30)
