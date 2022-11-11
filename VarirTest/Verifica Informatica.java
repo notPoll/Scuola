@@ -9,7 +9,7 @@ la temperatura iniziale, di cambiarla tramite un menu:
 NB: il minimi è 10 gradi e il massimo è 30 gradi
 */
 //package ; //mettere il nome della cartella dove andrà il file
-package Scuola;
+package Scuola.VarirTest;
 import java.io.*;
 class Caldaia  {
     private int temperatura;
@@ -38,22 +38,23 @@ class CaldaiaMain {
         BufferedReader tastiera = new BufferedReader(input);
         String Numeroletto;
         int Temperatura;
-        int Scelta;
+        int Scelta=0;
         Caldaia C1;
+        int x=10;
+        int y=30;
         System.out.println("Inserici la temperatura iniziale :");
         System.out.println("La temperatura deve essere di una massima di 30 gradi a una minima di 10");
         try {
             Numeroletto = tastiera.readLine();
             Temperatura = Integer.valueOf(Numeroletto).intValue();
-            if(Temperatura <= 10 && >= 30) {
+            if(Temperatura <= x || Temperatura >= y) {
                 System.out.println("La temperatura è maggiore di 30 o minore di 10");
             }
-            else {}
         }
         catch(Exception e) {
             System.out.println("C'è stato un errore");
         }
-        C1 = new Caldaia(Temperatura);
+        C1 = new Caldaia();
         C1.setTemp(Temperatura);
         do {
         System.out.println("Ciao, ecco a te un menu di scelta: \n 1: per aumentare la temperatura di 1 grado. \n 2: per diminuire la temperatura di 1 grado \n 3: per impostare una nuova temperatura. \n 4: per visualizzare la temperatura costante. \n 0 per uscire ");
@@ -70,7 +71,6 @@ class CaldaiaMain {
             if(Temperatura >= 30) {
                 System.out.println("La temperatura è maggiore di 30 non posso aumentare oltre");
             }
-            else {}
             C1.AumentaTemp(Temperatura);
             break;
 
@@ -80,17 +80,15 @@ class CaldaiaMain {
                 if(Temperatura <= 10) {
                 System.out.println("La temperatura è minore di 10 non posso diminuire oltre");
                 }
-                else{}
                 break;
                     case 3:
                     System.out.println("Inserisci la nuova temperatura ");
                     try {
                     Numeroletto = tastiera.readLine();
                     Temperatura = Integer.valueOf(Numeroletto).intValue();
-                    if(Temperatura <= 10 && >= 30) {
+                    if(Temperatura <= x || Temperatura <= y) {
                         System.out.println("La temperatura è maggiore di 30 o minore di 10");
                     }
-                    else {}
                         System.out.println("Temperatura inserita.");
                     }
                     catch(Exception e) {
