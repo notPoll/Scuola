@@ -12,13 +12,13 @@ class ContoCorrente {
                 return saldo;
             }
                 public void setVer(double s) {
-                    saldo = s;
+                    saldo = saldo + s;
                 }
                     public double getVer() {
                         return saldo;
                     }
                         public void Prelieva(double a) {
-                            saldo -= a;
+                            saldo = saldo -= a;
                         }
                             public void Visual() {
                                 System.out.println("Il tuo saldo è"  + saldo);
@@ -42,7 +42,7 @@ class MainClass {
             }
         C1 = new ContoCorrente(importo);
         do {
-            System.out.println("Inserisci 1 per Versare 2 per prelevare 0 per uscire");
+            System.out.println("Inserisci 1 per Versare 2 per prelevare 3 per visualizzare e 0 per uscire");
             try {
                 Numeroletto = tastiera.readLine();
                 scelta = Integer.valueOf(Numeroletto).intValue();
@@ -56,6 +56,8 @@ class MainClass {
                     try {
                     Numeroletto = tastiera.readLine();
                     importo = Double.valueOf(Numeroletto).doubleValue();
+                    C1.setVer(importo);
+                    C1.Visual();
                     } 
                     catch (Exception e) {
                     System.out.println("Errore");
@@ -63,14 +65,24 @@ class MainClass {
                     break;
                             case 2:
                             System.out.println("Quanto vuoi prelevare?");
+                            try {
+                            Numeroletto = tastiera.readLine();
+                            importo = Double.valueOf(Numeroletto).doubleValue();
+                            } 
+                            catch (Exception e) {
+                            System.out.println("Errore");
+                            }                       
                             if(importo <= C1.getSaldo()) {
                             C1.Prelieva(importo);
-                            C1.Visual();;
+                            C1.Visual();
                             }
                             else {
                             System.out.println("Non hai soldi vai a lavorare");
                             }
                             break;
+                                case 3:
+                                C1.Visual();
+                                break;
                                 case 0:
                                 System.out.println("Uscita...");
                                 break;
