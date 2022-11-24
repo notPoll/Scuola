@@ -5,15 +5,15 @@ import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 class ContoCorrente {
 
         private int saldo;
-        private String Cognome;
+        private String iban;
         public ContoCorrente(int saldo,String Cognome) {
             this.saldo=saldo;
         }
             public void setNome(String Nome) {
-                this.Cognome=Cognome;
+                this.iban=iban;
             }
                 public String getNome() {
-                    return Cognome;
+                    return iban;
                 }
                     public void setSaldo(int saldo) {
                         this.saldo=saldo;
@@ -38,13 +38,22 @@ class MainCC {
         InputStreamReader input = new InputStreamReader(System.in); 
         BufferedReader tastiera = new BufferedReader(input);
         int saldo, scelta=0 ;
-        String cognome;
+        String iban;
+        String NumeroLetto;
         ContoCorrente c1;
         final int dim=1000;
-        
+        int N;
+        try {
+            NumeroLetto = tastiera.readLine();
+            N = Integer.valueOf(NumeroLetto).intValue();
+        } 
+        catch (Exception e) {
+           System.out.println("Errore1");
+        }
+        ContoCorrente b1[ N ];
         System.out.println("Inserisci il cognome dell utente da aggiungiere");
         try {
-            cognome = tastiera.readLine();
+            iban = tastiera.readLine();
         } 
         catch (Exception e) {
             System.out.println("Errore");
