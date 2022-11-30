@@ -1,7 +1,5 @@
 package Scuola;
 import java.io.*;
-
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 class ContoCorrente {
 
         private int saldo;
@@ -50,7 +48,7 @@ class MainCC {
         catch (Exception e) {
            System.out.println("Errore1");
         }
-        ContoCorrente b1[ N ];
+        ContoCorrente b1[];
         System.out.println("Inserisci il cognome dell utente da aggiungiere");
         try {
             iban = tastiera.readLine();
