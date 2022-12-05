@@ -28,10 +28,46 @@ class Contatto {
                         public void visualizza() {
                             System.out.println("Il tuo nome e il tuo numero sono: " + nome + numero);
                         }
+                            public static void BubbleSort(Contatto v[]) {
+                                boolean scambio=false;
+                                int n=0;
+                                do {
+                                    scambio=false;
+                                    Contatto temp;
+                                    for (int i=0; i<v.length -1-n;i++) {
+                                            if (v[i].getNome().compareTo(v[i+1].getNome())>0) {
+                                                temp=v[i];
+                                                v[i]=v[i+1];
+                                                v[i+1]=temp;
+                                                scambio=true;
+                                            }
+                                    }
+                                n++;
+                                }
+                                while(scambio); 
+                            }
+                            public static int BinarySearch(Contatto v[] , String Name) {
+                                int start=0,end=v.length-1,center=0, pos=-1;
+                                do {
+                                    center=(start+end)/2;
+                                    if (v[center].getNome().equals(Name)) {
+                                        pos=center;
+                                    }
+                                    else {
+                                        if(Name.compareTo(v[center].getNome())>0) {
+                                            start=center+1;
+                                        }
+                                        else {
+                                            end=center-1;
+                                        }
+
+                                    }
+                                }
+                                while(pos==-1 && start<=end);
+                                return pos;
+                            }
 }
 class RubricaMain {
-    private static final int scelta = 0;
-
     public static void main(String[] args) {
         InputStreamReader input = new InputStreamReader(System.in);
         BufferedReader tastiera = new BufferedReader(input);
@@ -45,10 +81,6 @@ class RubricaMain {
             catch (Exception e) {
             System.out.println("Errore1");
             }
-            Contatto a[] = new Contatto[N];
-            for (int i = 0; i < N; i++) {
-                System.out.println("\n Numero: " + (i+1) + ":");
-                System.out.println("Nome: ");
-            }
+            
     }
 }
