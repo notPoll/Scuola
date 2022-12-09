@@ -1,11 +1,14 @@
 /*
-Scrivere un programma per la gestione di una rubrica telefonica che consenta l’inserimento delle informazioni (nome e numero di telefono) relative a 100 contatti in un array e successivamente permetta di modificare il numero di telefono di un contatto determinato in base al nome fornito dall'utente (si suppone che nell'array non ci siano contatti con nome uguale).
+Scrivere un programma per la gestione di una rubrica telefonica che consenta 
+l’inserimento delle informazioni (nome e numero di telefono) relative a 100 contatti in un array e successivamente permetta di 
+modificare il numero di telefono di un contatto determinato in base al nome fornito dall'utente (si suppone che nell'array non ci siano contatti con nome uguale).
 Si richiede che la ricerca del contatto da modificare sia effettuata utilizzando la ricerca dicotomica.
 
 Suggerimento: la classe Contatto dovrà prevedere gli attributi nome e numeroDiTelefono, il metodo costruttore, ed i metodi: getNome, getNumeroDiTelefono, setNome, setNumeroDiTelefono e visualizza.
 */
 package Blabla;
 import java.io.*;
+import java.text.BreakIterator;
 class Contatto {
     private String nome;
     private String numero;
@@ -60,7 +63,6 @@ class Contatto {
                                         else {
                                             end=center-1;
                                         }
-
                                     }
                                 }
                                 while(pos==-1 && start<=end);
@@ -73,6 +75,7 @@ class RubricaMain {
         BufferedReader tastiera = new BufferedReader(input);
         String numeroletto;
         int N=0;
+        int scelta=0;
             System.out.println("Inserisci la dimensione dell'array");
             try {
                 numeroletto = tastiera.readLine();
@@ -81,6 +84,39 @@ class RubricaMain {
             catch (Exception e) {
             System.out.println("Errore1");
             }
+                for (int i=0; i<N; i++) {
+                    
+                }
+        do {
+        System.out.println("Inserisci: \n 1: per inserire X contatti nell array //nota che la dim è :" + N);
+        System.out.println("\n 2: per modificare il numero di telefono basandosi sul nome");
+        System.out.println("\n 0: per uscire..");
+        try {
+                numeroletto = tastiera.readLine();
+                scelta = Integer.valueOf(numeroletto).intValue();
+        } 
+        catch (Exception e) {
+            System.out.println("Errore2");
+        }
+        switch (scelta) {
+        case 1:
             
+        break;
+        
+            case 2:
+
+            break;
+                    case 0:
+                    System.out.println("Uscita...");
+                    break;
+                            default:
+                            System.out.println("Hai inserito un numero differente da 1,2,0");
+                            break;
+        }
+
+        }
+        while(scelta!=0);
+        
+        
     }
 }
