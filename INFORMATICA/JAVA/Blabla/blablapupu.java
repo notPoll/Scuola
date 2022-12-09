@@ -84,8 +84,9 @@ class RubricaMain {
             catch (Exception e) {
             System.out.println("Errore1");
             }
+            Contatto[] C1 = new Contatto[N];
                 for (int i=0; i<N; i++) {
-                    
+
                 }
         do {
         System.out.println("Inserisci: \n 1: per inserire X contatti nell array //nota che la dim è :" + N);
