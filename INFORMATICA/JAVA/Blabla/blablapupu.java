@@ -8,7 +8,6 @@ Suggerimento: la classe Contatto dovrà prevedere gli attributi nome e numeroDiT
 */
 package Blabla;
 import java.io.*;
-import java.text.BreakIterator;
 class Contatto {
     private String nome;
     private String numero;
@@ -84,12 +83,9 @@ class RubricaMain {
             catch (Exception e) {
             System.out.println("Errore1");
             }
-            Contatto[] C1 = new Contatto[N];
-                for (int i=0; i<N; i++) {
-
-                }
+            Contatto[] C1 = new Contatto[N]; //creazione dell'array    
         do {
-        System.out.println("Inserisci: \n 1: per inserire X contatti nell array //nota che la dim è :" + N);
+        System.out.println("Inserisci: \n 1: per inserire contatti nell array //nota che la dim è : " + N);
         System.out.println("\n 2: per modificare il numero di telefono basandosi sul nome");
         System.out.println("\n 0: per uscire..");
         try {
@@ -101,7 +97,25 @@ class RubricaMain {
         }
         switch (scelta) {
         case 1:
-            
+            System.out.println("Inserisci Nome e numero di telefono dell contatto da creare");
+            String Nome;
+            String Numero;
+            System.out.println("Nome: \n");
+            try {
+                numeroletto = tastiera.readLine();
+                Nome = numeroletto;
+            } 
+            catch (Exception e) {
+                System.out.println("Errore3");
+            }
+            System.out.println("Numero: \n");
+            try {
+                numeroletto = tastiera.readLine();
+                Numero = numeroletto;
+            } 
+            catch (Exception e) {
+                System.out.println("Errore4");
+            }
         break;
         
             case 2:
@@ -117,7 +131,5 @@ class RubricaMain {
 
         }
         while(scelta!=0);
-        
-        
     }
 }
