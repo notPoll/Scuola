@@ -15,14 +15,14 @@ class Contatto {
         this.numero = tempnum;
         this.nome = tempnom;
     }
-        public void setNome(String nome) {
-        this.nome = nome;
+        public void setNome(String nom) {
+        nome = nom;
         }
             public String getNome() {
                 return nome;
             }
-                public void setNumero(String numero) {
-                    this.numero = numero;
+                public void setNumero(String num) {
+                    numero = num;
                 }
                     public String getNumero() {
                         return numero;
@@ -30,7 +30,7 @@ class Contatto {
                         public void visualizza() {
                             System.out.println("Il tuo nome e il tuo numero sono: " + nome + numero);
                         }
-                            public static void BubbleSort(Contatto v[]) {
+                            public void BubbleSort(Contatto v[]) {
                                 boolean scambio=false;
                                 int n=0;
                                 do {
@@ -48,7 +48,7 @@ class Contatto {
                                 }
                                 while(scambio); 
                             }
-                            public static int BinarySearch(Contatto v[] , String Name) {
+                            public int BinarySearch(Contatto v[] , String Name) {
                                 int start=0,end=v.length-1,center=0, pos=-1;
                                 do {
                                     center=(start+end)/2;
@@ -75,6 +75,9 @@ class RubricaMain {
         String numeroletto;
         int N=0;
         int scelta=0;
+        String Nome = "";
+        String Numero = "";
+        
             System.out.println("Inserisci la dimensione dell'array");
             try {
                 numeroletto = tastiera.readLine();
@@ -87,6 +90,7 @@ class RubricaMain {
         do {
         System.out.println("Inserisci: \n 1: per inserire contatti nell array //nota che la dim è : " + N);
         System.out.println("\n 2: per modificare il numero di telefono basandosi sul nome");
+        System.out.println("\n 3: per visualizzare la rubrica");
         System.out.println("\n 0: per uscire..");
         try {
                 numeroletto = tastiera.readLine();
@@ -96,32 +100,38 @@ class RubricaMain {
             System.out.println("Errore2");
         }
         switch (scelta) {
-        case 1:
-            System.out.println("Inserisci Nome e numero di telefono dell contatto da creare");
-            String Nome;
-            String Numero;
+            case 1:
+            
             System.out.println("Nome: \n");
-            try {
-                numeroletto = tastiera.readLine();
-                Nome = numeroletto;
-            } 
-            catch (Exception e) {
-                System.out.println("Errore3");
-            }
-            System.out.println("Numero: \n");
-            try {
-                numeroletto = tastiera.readLine();
-                Numero = numeroletto;
-            } 
-            catch (Exception e) {
-                System.out.println("Errore4");
-            }
-            System.out.println();
-        break;
-        
-            case 2:
-
+                try {
+                    Nome = tastiera.readLine();    
+                } 
+                catch (Exception e) {
+                    System.out.println("Errore3");
+                }
+                 System.out.println("Numero: \n");
+                try {
+                Numero = tastiera.readLine();
+                } 
+                catch (Exception e) {   
+                System.out.println("Errore4"); 
+                }        
+                Contatto Persona = new Contatto(Numero, Nome); 
             break;
+                case 2:
+                System.out.print("Nome del contatto da modificare? :");
+                String Trova="";
+                try {
+                    Trova = tastiera.readLine();
+                } 
+                catch (Exception e) {
+                    System.out.println("Errore5");
+                }            
+                break;
+                        case 3:
+                            C1[N].visualizza();
+                        break;
+                
                     case 0:
                     System.out.println("Uscita...");
                     break;
