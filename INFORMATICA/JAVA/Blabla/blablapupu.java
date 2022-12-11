@@ -116,6 +116,7 @@ class RubricaMain {
             catch (Exception e) {
                 System.out.println("Errore4");
             }
+            System.out.println();
         break;
         
             case 2:
@@ -132,4 +133,4 @@ class RubricaMain {
         }
         while(scelta!=0);
     }
-}
+} 

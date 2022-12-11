@@ -1,4 +1,4 @@
-package Munnez.Menu;
+package Menu;
 import java.io.*;
 class ContoCorrente {
     private double saldo;

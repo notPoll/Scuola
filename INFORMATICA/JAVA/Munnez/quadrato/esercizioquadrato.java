@@ -1,4 +1,4 @@
-package Munnez.quadrato;
+package quadrato;
 import java.io.*;
 class quadrato {
     private double lato;

@@ -1,4 +1,4 @@
-package Munnez.Somma;
+package Somma;
 import java.io.InputStreamReader;
 import java.io.*;
 class SOMMA {

@@ -1,4 +1,4 @@
-package Munnez.Convertitore;
+package Convertitore;
 import java.io.*;
 class ConvertitoreNum {
      public static void main(String[] args) {
