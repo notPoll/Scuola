@@ -1,4 +1,5 @@
 package Munnez.Verifica;
+
 import java.io.*;
 class Verifica2 {
     private String parola="";
@@ -26,22 +27,25 @@ class mainVerifica2 {
         catch (Exception e) {
             System.out.println("Errore1");
         }
-        int prima=0 , dopo=0;    
+        int inizio=0, centro=0, fine=0, pos=-1;
+				do {
+					centro=(inizio+fine)/2;
 					if(parola.equals(parola)) {
-						prima=dopo;
+						pos=centro;
 					}
 					else {
 						if(parola.compareTo(parola)<0) {
-							prima=dopo-1;
+							fine=centro-1;
+                            System.out.println("Parola doppia non trovata");
 						}
 						else {
-							prima=dopo+1;
+                            System.out.println("Parola doppia trovata");
+							inizio=centro+1;
 						}
-					}	            
-					System.out.println("nessun carattere doppio vicino trovato");
+					}	
 				}
-                else {
-                    System.out.println("Doppio carattere trovato!");
-                }
+                while(pos==-1 && inizio <= fine);
+				
+				}
         } 
 
