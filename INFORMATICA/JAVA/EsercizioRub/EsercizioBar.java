@@ -22,7 +22,7 @@ class Rubrica {
 	}
 	
 	
-	public void visualizza() {
+	public void visualizza( ) {
 		System.out.println("il numero di telefono è: " + numero);
 		System.out.println("il nome del contatto è: " + nome);
 	}
@@ -84,8 +84,7 @@ class ProgRubrica {
 		}
         while(scambio==false);
         //fine ordinamento
-		int scelta=0;
-		
+		int scelta=0;	
 		do {
 			System.out.println("inserisci 1 per cambiare un numero telefonico, 2 per visualizzare la rubrica, 3 per uscire");
 			try {

@@ -16,27 +16,29 @@ class Contatto {
         this.nome = tempnom;
     }
         public void setNome(String nom) {
-        nome = nom;
+        this.nome = nom;
         }
             public String getNome() {
                 return nome;
             }
                 public void setNumero(String num) {
-                    numero = num;
+                    this.numero = num;
                 }
                     public String getNumero() {
                         return numero;
                     }
-                        public void visualizza() {
-                            System.out.println("Il tuo nome e il tuo numero sono: " + nome + numero);
+                        public void visualizza(Contatto v[] ) {
+                            for (int i = 0; i < v.length; i++) {
+                                System.out.println("Nome e Numero: " + v);
+                            }
                         }
-                            public void BubbleSort(Contatto v[]) {
+                            public static void BubbleSort(Contatto v[]) {
                                 boolean scambio=false;
                                 int n=0;
                                 do {
                                     scambio=false;
                                     Contatto temp;
-                                    for (int i=0; i<v.length -1-n;i++) {
+                                    for (int i=0; i<v.length-1-n;i++) {
                                             if (v[i].getNome().compareTo(v[i+1].getNome())>0) {
                                                 temp=v[i];
                                                 v[i]=v[i+1];
@@ -48,7 +50,7 @@ class Contatto {
                                 }
                                 while(scambio); 
                             }
-                            public int BinarySearch(Contatto v[] , String Name) {
+                            public static int BinarySearch(Contatto v[] , String Name) {
                                 int start=0,end=v.length-1,center=0, pos=-1;
                                 do {
                                     center=(start+end)/2;
@@ -77,7 +79,6 @@ class RubricaMain {
         int scelta=0;
         String Nome = "";
         String Numero = "";
-        
             System.out.println("Inserisci la dimensione dell'array");
             try {
                 numeroletto = tastiera.readLine();
@@ -86,11 +87,12 @@ class RubricaMain {
             catch (Exception e) {
             System.out.println("Errore1");
             }
-            Contatto[] C1 = new Contatto[N]; //creazione dell'array    
+            Contatto[] v = new Contatto[N]; //creazione dell'array    
         do {
         System.out.println("Inserisci: \n 1: per inserire contatti nell array //nota che la dim è : " + N);
         System.out.println("\n 2: per modificare il numero di telefono basandosi sul nome");
         System.out.println("\n 3: per visualizzare la rubrica");
+        System.out.println("\n 4: per ordinare la rubrica");
         System.out.println("\n 0: per uscire..");
         try {
                 numeroletto = tastiera.readLine();
@@ -117,7 +119,7 @@ class RubricaMain {
                 System.out.println("Errore4"); 
                 }        
                 Contatto Persona = new Contatto(Numero, Nome); 
-                C1[M] = Persona;
+                v[M] = Persona;
                 M++;
             break;
                 case 2:
@@ -129,34 +131,15 @@ class RubricaMain {
                 catch (Exception e) {
                     System.out.println("Errore5");
                 }           
-                int inizio=0, centro=0, fine=0, pos=-1;
-				do {
-					centro=(inizio+fine)/2;
-					if(Trova.equals(C1[centro].getNome())) {
-						pos=centro;
-					}
-					else {
-						if(Trova.compareTo(C1[centro].getNome())<0) {
-							fine=centro-1;
-						}
-						else {
-							inizio=centro+1;
-						}
-					}	
-				}
-                while(pos==-1 && inizio <= fine);
-				
-				if(pos==-1) {
-					System.out.println("nessun elemento trovato");
-				}
-				else {
-					C1[pos].setNumero(Numero);
-					System.out.println("contatto modificato");
-				} 
+                Contatto.BinarySearch(v, Trova);
+
                 break;
                         case 3:
-                            C1[N].visualizza();
+                           v[N].visualizza(v[N]);
                         break;
+                            case 4:
+                            Contatto.BubbleSort(v);
+                            break;
                     case 0:
                     System.out.println("Uscita...");
                     break;
@@ -164,7 +147,6 @@ class RubricaMain {
                             System.out.println("Hai inserito un numero differente da 1,2,0");
                             break;
         }
-
         }
         while(scelta!=0);
     }
