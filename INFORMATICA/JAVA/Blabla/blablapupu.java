@@ -101,7 +101,7 @@ class RubricaMain {
         }
         switch (scelta) {
             case 1:
-            
+            int M=0;
             System.out.println("Nome: \n");
                 try {
                     Nome = tastiera.readLine();    
@@ -117,6 +117,8 @@ class RubricaMain {
                 System.out.println("Errore4"); 
                 }        
                 Contatto Persona = new Contatto(Numero, Nome); 
+                C1[M] = Persona;
+                M++;
             break;
                 case 2:
                 System.out.print("Nome del contatto da modificare? :");
@@ -126,12 +128,35 @@ class RubricaMain {
                 } 
                 catch (Exception e) {
                     System.out.println("Errore5");
-                }            
+                }           
+                int inizio=0, centro=0, fine=0, pos=-1;
+				do {
+					centro=(inizio+fine)/2;
+					if(Trova.equals(C1[centro].getNome())) {
+						pos=centro;
+					}
+					else {
+						if(Trova.compareTo(C1[centro].getNome())<0) {
+							fine=centro-1;
+						}
+						else {
+							inizio=centro+1;
+						}
+					}	
+				}
+                while(pos==-1 && inizio <= fine);
+				
+				if(pos==-1) {
+					System.out.println("nessun elemento trovato");
+				}
+				else {
+					C1[pos].setNumero(Numero);
+					System.out.println("contatto modificato");
+				} 
                 break;
                         case 3:
                             C1[N].visualizza();
                         break;
-                
                     case 0:
                     System.out.println("Uscita...");
                     break;
