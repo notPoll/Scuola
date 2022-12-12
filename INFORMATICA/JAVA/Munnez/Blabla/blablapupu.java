@@ -6,7 +6,7 @@ Si richiede che la ricerca del contatto da modificare sia effettuata utilizzando
 
 Suggerimento: la classe Contatto dovrà prevedere gli attributi nome e numeroDiTelefono, il metodo costruttore, ed i metodi: getNome, getNumeroDiTelefono, setNome, setNumeroDiTelefono e visualizza.
 */
-package Blabla;
+package Munnez.Blabla;
 import java.io.*;
 class Contatto {
     private String nome;
