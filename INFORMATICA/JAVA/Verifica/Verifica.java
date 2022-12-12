@@ -1,6 +1,7 @@
 package Verifica;
 import java.io.*;
 import java.net.IDN;
+import java.sql.Time;
 class Libro {
    private String titolo;
    private String autore;
@@ -40,8 +41,12 @@ class LibreriaMain {
         BufferedReader tastiera = new BufferedReader(input);
         String numeroletto;
         final int DIM = 100;
-        System.out.println("Inserimento Libro nell array(Libreria)");
+        String titolo="" , autore="" , id="";
+        System.out.println("Inserimento Libri Libreria");
         Libro[] v = new Libro[DIM];
+        for (int i = 0; i < v.length; i++) {
+            System.out.println("\n Titolo del Libro:" );
 
+        }
     }
 }
