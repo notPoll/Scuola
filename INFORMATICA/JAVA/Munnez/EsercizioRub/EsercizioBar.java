@@ -1,4 +1,4 @@
-package EsercizioRub;
+package Munnez.EsercizioRub;
 import java.io.*;
 class Rubrica {
 	private String nome;

@@ -1,4 +1,4 @@
-package Verifica;
+package Munnez.Verifica;
 import java.io.*;
 class Libro {
    private String titolo;
