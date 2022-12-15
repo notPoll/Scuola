@@ -1,0 +1,4 @@
+carciofi 12 500
+sedani 3 200
+carote 20 1000
+zucchine 8 20
