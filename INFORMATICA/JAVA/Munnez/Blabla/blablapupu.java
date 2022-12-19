@@ -6,7 +6,7 @@ Si richiede che la ricerca del contatto da modificare sia effettuata utilizzando
 
 Suggerimento: la classe Contatto dovrà prevedere gli attributi nome e numeroDiTelefono, il metodo costruttore, ed i metodi: getNome, getNumeroDiTelefono, setNome, setNumeroDiTelefono e visualizza.
 */
-package Munnez.Blabla;
+package Blabla;
 import java.io.*;
 class Contatto {
     private String nome;
@@ -135,7 +135,9 @@ class RubricaMain {
 
                 break;
                         case 3:
-                           v[N].visualizza(v[N]);
+                        for (int i = 0; v.length < i ; i++) {
+                            v[i].visualizza(v);
+                        }
                         break;
                             case 4:
                             Contatto.BubbleSort(v);

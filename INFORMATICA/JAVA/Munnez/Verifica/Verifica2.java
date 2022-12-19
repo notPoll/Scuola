@@ -1,4 +1,4 @@
-package Munnez.Verifica;
+package Verifica;
 import java.io.*;
 class Verifica2 {
     public static boolean search(String str){
@@ -9,6 +9,7 @@ class Verifica2 {
                 trovato=true;
             }
         }while(!trovato && i<str.length());
+        return trovato;
     }
 }
 class mainVerifica2 {
