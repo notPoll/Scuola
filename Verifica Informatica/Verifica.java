@@ -45,7 +45,7 @@ class MezzoDiTrasporto {
             NumPorte = numPorte;
         }
 
-        public void Visualizza() {
+        public void visualizza() {
             System.out.println("Numero Porte: " + NumPorte);
         } 
         public int bolloAuto(int Potenza , int bollo) {
@@ -63,7 +63,7 @@ class MainMezzi {
         InputStreamReader input = new InputStreamReader(System.in);   
         BufferedReader tastiera = new BufferedReader(input);
         String Targa = "" , Modello = "", Scelta = "" , NumLetto = "";
-        int Potenza = 0, Bollo = 0, NumPort = 0;
+        int Potenza = 0, NumPort = 0;
         final int DIM = 10;
         MezzoDiTrasporto Mezzi[] = new MezzoDiTrasporto[DIM];
         for (int i=0; i < DIM; i++) {
@@ -102,6 +102,7 @@ class MainMezzi {
                 catch (Exception e) {
                     System.out.println("Errore 4");
                 }
+                
                 Mezzi[i] = new Automobile(NumPort,Targa,Modello,Potenza);
             }
             else {
@@ -109,8 +110,11 @@ class MainMezzi {
             }    
         }
         for (int i=0; i<DIM; i++) {
-            if (Mezzi[i] instanceof Automobile) {
-                Mezzi[i].Visualizza();
+            int bollo=0;
+            Mezzi[i].Visualizza();
+            if(Mezzi[i] instanceof Automobile) {
+                bollo = bollo + ((Automobile)Mezzi[i]).bolloAuto();
+                System.out.println("Bollo:" + bollo);
             }
         }
     }
