@@ -1,11 +1,12 @@
 package Scuola.INFORMATICA.JAVA.GUI.Menu;
-import java.io.*;
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.plaf.BorderUIResource;
 class MainMenu {
     public static void main(String[] args) {
-        JFrame F = new JFrame();
-        JPanel P = new JPanel();
+        JFrame frame = new JFrame("Scelta Menu");
+        frame.setSize(400, 300);
+        JPanel mainPanel = new JPanel();
         JPanel P1 = new JPanel();
         JPanel P2 = new JPanel();
         JPanel P3 = new JPanel();
@@ -20,8 +21,5 @@ class MainMenu {
         JLabel Porzioni2 = new JLabel("Porzioni Secondo");
         JTextField TPrimo = new JTextField(4);
         JTextField TSecondo = new JTextField(4);
-        P1.add(Text1);
-        P2.setLayout(new GridLayout(2,2));
-        
     }
 }

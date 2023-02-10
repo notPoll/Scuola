@@ -1,4 +1,4 @@
-package Scuola.INFORMATICA.JAVA.Munnez.EsZozzo;
+package EsZozzo;
 import java.io.*;
 /*
 3.Scrivere un programma che consenta l’inserimento delle
