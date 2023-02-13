@@ -35,9 +35,9 @@ class Finestra extends JFrame implements ActionListener {
             pColor.setBackground(Color.GREEN);
         }
         if(Event.equals("Casuale")) {
-            int R = (int)Math.random()*256;
-            int G = (int)Math.random()*256;
-            int B = (int)Math.random()*256;
+            int R = (int)(Math.random()*256);
+            int G = (int)(Math.random()*256);
+            int B = (int)(Math.random()*256);
             pColor.setBackground(new Color(R,G,B));
         }
     }
