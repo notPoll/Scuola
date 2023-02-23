@@ -8,8 +8,8 @@ class Finestre extends JFrame implements ActionListener {
     private JPanel P2 = new JPanel();
     private JPanel P3 = new JPanel();
     private JPanel P4 = new JPanel();
-    private JTextField T1 = new JTextField("Cognome");
-    private JTextField T2 = new JTextField("Nome");
+    private JTextField Cognome = new JTextField(0);
+    private JTextField Nome = new JTextField(0);
     private JLabel L1 = new JLabel();
     private JLabel L2 = new JLabel();
     private JButton btnOK = new JButton("OK");
@@ -20,11 +20,10 @@ class Finestre extends JFrame implements ActionListener {
         P2.setLayout(new GridLayout());
         P3.setLayout(new BorderLayout());
         P4.setLayout(new BorderLayout());
-
         P3.add(btnOK);
         P3.add(btnANN);
-        P4.add(T1, "East");
-        P4.add(T2, "Center");
+        P4.add(Cognome, "East");
+        P4.add(Nome, "Center");
         btnANN.addActionListener(this);
         btnOK.addActionListener(this);
         getContentPane().add(P1);
@@ -33,8 +32,8 @@ class Finestre extends JFrame implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String Event=(e.getActionCommand());
             if (Event.equals("Annulla")) {
-                T1.setText("");
-                T2.setText("");
+                Cognome.setText("");
+                Nome.setText("");
             }
         }
 }
@@ -42,8 +41,7 @@ class MainFin {
     public static void main(String[] args) {
         Finestre F = new Finestre();
         F.setSize(300, 300);
-        F.setLocation(100, 100);
+        F.setLocation( 300, 400);
         F.setVisible(true);
-
     }
 }
