@@ -12,8 +12,8 @@ class Finestre extends JFrame implements ActionListener {
     private JTextField T2 = new JTextField("Nome");
     private JLabel L1 = new JLabel();
     private JLabel L2 = new JLabel();
-    private JButton btnOK = new JButton();
-    private JButton btnANN = new JButton();
+    private JButton btnOK = new JButton("OK");
+    private JButton btnANN = new JButton("Annulla");
     public Finestre() {
         super("Dati Anagrafici");
         P.setLayout(new BorderLayout());
@@ -33,12 +33,17 @@ class Finestre extends JFrame implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String Event=(e.getActionCommand());
             if (Event.equals("Annulla")) {
-
+                T1.setText("");
+                T2.setText("");
             }
         }
 }
 class MainFin {
     public static void main(String[] args) {
-    
+        Finestre F = new Finestre();
+        F.setSize(300, 300);
+        F.setLocation(100, 100);
+        F.setVisible(true);
+
     }
 }
