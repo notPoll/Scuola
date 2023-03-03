@@ -43,5 +43,6 @@ class MainFin {
         F.setSize(300, 300);
         F.setLocation( 300, 400);
         F.setVisible(true);
+        F.
     }
 }
