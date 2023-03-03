@@ -79,7 +79,7 @@ class CodFiscale extends JFrame implements ActionListener {
         String Event = e.getActionCommand();
         if(Event.equals("Calcola codice fiscale")) {
             if(TCognome.getText().equals("") || TNome.getText().equals("")) {
-                JOptionPane.showMessageDialog(this, e, , );
+                JOptionPane.showMessageDialog(this, e, );
             }
         }
     }
