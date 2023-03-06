@@ -10,20 +10,25 @@ class CodFiscale extends JFrame implements ActionListener {
     private JPanel PRisultato = new JPanel();
     private JPanel PSesso = new JPanel();
     private JPanel PData = new JPanel();
+
     private JTextField TCognome = new JTextField(20);
     private JTextField TNome = new JTextField(20);
     private JTextField TGiorno = new JTextField(4);
     private JTextField TAnno = new JTextField(8);
     private JTextField TComune = new JTextField(20);
     private JTextField TRisultato = new JTextField(20);
+
     private JLabel LCognome = new JLabel("Cognome");
     private JLabel LNome = new JLabel("Nome");
     private JLabel LSesso = new JLabel("Sesso");
     private JLabel LData = new JLabel("Data");
     private JLabel LComune = new JLabel("Comune");
+
     private JRadioButton RM = new JRadioButton("Maschio");
     private JRadioButton RF = new JRadioButton("Femmina");
+
     private JComboBox CMSE = new JComboBox<>();
+    
     private JButton BRisultato = new JButton("Calcola Codice FIscale");
     public CodFiscale(boolean False) {
         super("Codice Fiscale");
@@ -75,16 +80,23 @@ class CodFiscale extends JFrame implements ActionListener {
         setVisible(true);
         setResizable(false);
     }
-    public void ActionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         String Event = e.getActionCommand();
         if(Event.equals("Calcola codice fiscale")) {
             if(TCognome.getText().equals("") || TNome.getText().equals("")) {
-                JOptionPane.showMessageDialog(this, e, );
+                JOptionPane.showMessageDialog(this, "Inverti tutti i valori","Errore" , JOptionPane.ERROR_MESSAGE);
             }
-        }
+            int n;
+            String tmp = TCognome.getText() + TNome.getText();
+            n = JOptionPane.showMessageDialog(this, "Risultato:" + tmp , "Conserva", JOptionPane.YES_NO_OPTION , JOptionPane.QUESTION_MESSAGE + "Vuoi terminare?");
+            if(n == JOptionPane.YES_NO_OPTION) {
+                System.exit(0);
+            }
+        }     
     }
-
 }
 class CodFiscaleMain {
+   public static void main(String[] args) {
     
+   } 
 }
