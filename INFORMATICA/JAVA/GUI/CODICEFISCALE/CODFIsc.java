@@ -88,7 +88,7 @@ class CodFiscale extends JFrame implements ActionListener {
             }
             int n;
             String tmp = TCognome.getText() + TNome.getText();
-            n = JOptionPane.showMessageDialog(this, "Risultato:" + tmp , "Conserva", JOptionPane.YES_NO_OPTION , JOptionPane.QUESTION_MESSAGE + "Vuoi terminare?");
+            n = JOptionPane.showMessageDialog(this, "Risultato:" + tmp , "Conserva", JOptionPane.YES_NO_OPTION , JOptionPane.QUESTION_MESSAGE);
             if(n == JOptionPane.YES_NO_OPTION) {
                 System.exit(0);
             }
@@ -97,6 +97,10 @@ class CodFiscale extends JFrame implements ActionListener {
 }
 class CodFiscaleMain {
    public static void main(String[] args) {
-    
+    CodFiscale F = new CodFiscale(true);
+    F.setVisible(true);
+    F.setSize(300,300);
+    F.setLocation(100,100);
+    F.setResizable(false);
    } 
 }
