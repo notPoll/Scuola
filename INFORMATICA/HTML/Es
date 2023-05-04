@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="Stampa"></p>
+    <form action="" method="post">
+        <label>A</label>
+            <input type="text" name="A" id="A">
+        <label>B</label>
+        <input type="text" name="B" id="B">
+        <input type="button" value="Calcola" onclick="somma()">
+    </form>
+    <script>
+    function Somma() {
+        let OP1=parseInt(A.value);
+        let OP2=parseInt(B.value);
+        let Risultato= OP1+OP2;
+        Stampa.innerhtml=Risultato;
+    }
+    </script>
+</body>
+</html>
