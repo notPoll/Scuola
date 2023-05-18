@@ -102,5 +102,6 @@ class CodFiscaleMain {
     F.setSize(300,300);
     F.setLocation(100,100);
     F.setResizable(false);
+    F.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    } 
-}
+} 
