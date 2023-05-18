@@ -34,7 +34,7 @@ class MainFinestre {
         Finestre F = new Finestre();
         F.setSize(300,200);
         F.setLocation(100,200);
-        F.setResizable(false);
         F.setVisible(true); 
+        
     }
 }
