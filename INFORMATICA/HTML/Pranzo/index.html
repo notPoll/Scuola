@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scegli il tuo pranzo</title>
+
+    <link rel="stylesheet" href="style.css">    
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Scegli il tuo pranzo</h1>
+    <form action="" method="post">
+        <div class="menuPietanze">
+            <label>Pietanze:</label>
+            <div class="menuOption">
+                <input type="checkbox" name="pietanze">
+                <label>antipasto</label>
+            </div>
+
+            <div class="menuOption">
+                <input type="checkbox" name="pietanze">
+                <label>primo piatto</label>
+            </div>
+
+            <div class="menuOption">
+                <input type="checkbox" name="pietanze">
+                <label>secondo piatto</label> 
+            </div>
+
+            <div class="menuOption">
+                <input type="checkbox" name="pietanze">
+                <label>contorno</label>
+            </div>
+
+            <div class="menuOption">
+                <input type="checkbox" name="pietanze">
+                <label>dessert</label>
+            </div>
+        </div>
+        <div class="menuPagamento">
+            <label>Pagamento:</label>
+            <select name="pagamento" id="pagamento">
+                <option value="carta">carta</option>
+                <option value="contanti">contanti</option>
+            </select>
+        </div>
+
+        <input type="button" id="invia" value="invia" onclick="send()"> 
+    </form>
+</body>
+</html> 
