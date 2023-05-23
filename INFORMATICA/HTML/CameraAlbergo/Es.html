@@ -10,5 +10,25 @@
 </head>
 <body>
     <h1>Prenotazione Camera</h1>
+<form>
+    <label> Nome </label>
+    <input type="text" id="Nome" name="Nome">
+    <br>
+    <label> Cognome </label>
+    <input type="text" id="Cognome" name="Cognome">
+    <br>
+    <label> Date di arrivo </label>
+    <input type="date" id="Data" name="Data">
+    <br>
+    <label> Numero notti </label>
+    <input type="number" 0="Notti" name="Notti" min="1" max="10" step="1">
+    <br>
+    <label> Camera </label>
+    <br>
+    <input type="Radio" id="Singola" name="Radio"> Singola
+    <input type="Radio" id="Doppia" name="Radio"> Doppia
+    <input type="Button" id="Inv" name="Inv" value="Invia" onclick="valide()">
+    <p id="Par">
+</form>
 </body>
 </html>
