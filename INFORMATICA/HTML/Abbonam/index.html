@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbbonamentoQuotidiano</title>
+    <link rel="stylesheet" href="style.css">    
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1> Abbonamento al Quotidiano </h1>
+    <form action="" method="post">
+        <label>Nome</label>
+        <input type="text" id="Nome" name="Nome">
+        <br>
+        <label>Cognome</label>
+        <input type="text" id="Cognome" name="Cognome">
+        <br>
+        <label>Data Inizio</label>
+        <input type="date" id="Data" nome="Data">
+        <br>
+        <label>Numero Giorni</label>
+        <input type="number" id="nGiorni" nome="nGiorni">
+        <br>
+        <label>Nome Quotidiano</label>
+        <select id="NomeQuotidiano" name="NomeQuotidiano">
+            <option value="" selected></option>
+            <option value="Messaggero">Messaggero</option>
+            <option value="Corriere della Sera">Corriere della Sera</option>
+        </select>
+        <br>
+        <input type="button" value="invia" onclick="validazione()">
+    </form>
+</body>
+</html>
