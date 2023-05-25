@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+</body>
+</html>
+<html>
+	<head>
+		<title>Anagrafica</title>
+		<script>
+			function validazione()
+			{
+				let nome = document.getElementById("nome").value;
+				let cnome = document.getElementById("cognome").value;
+				let cf = document.getElementById("cf").value;
+				let data = document.getElementById("data").value;
+				let arr_radio = document.getElementsByName("sesso");
+				let arr_checkbox = document.getElementsByName("hobby");
+				let nazione = document.getElementById("nazione").value;
+
+				if(nome=="")
+				{
+					alert("Non è stato inserito il nome");
+					return false;
+				}
+            
+				if(cnome=="")
+				{
+					alert("Non è stato inserito il cognome");
+					return false;
+				}
+
+				if(cf.length != 16)
+				{
+					alert("Il codice fiscale non è stato inserito correttamente");
+					return false;
+				}
+
+				if(data == "")
+				{
+					alert("Non è stata inserita la data");
+					return false;
+				}
+			
+				//controllo dell'array dei radio button
+				let trovato = false;
+				for (let i=0; i<arr_radio.length; i++)
+				{
+					if (arr_radio[i].checked)
+					{
+						trovato=true;
+					}
+				}
+				if (trovato==false)
+				{
+					alert("Non è stato specificato il sesso");
+					return false;
+				}
+			
+				//controllo dell'array dei checkbox
+				let cont = 0;
+				for (let i=0; i<arr_checkbox.length; i++)
+				{
+					if (arr_checkbox[i].checked==true)
+					{
+						cont++;
+					}
+				}
+				if(cont<2)
+				{
+					alert("Inserire minimo 2 hobby");
+					return false;
+				}
+            
+				if(nazione=="")
+				{
+					alert('Non è stata inserita la nazione');
+					return false;
+				}
+            
+				let dati="Nome: "+nome+
+					"\nCognome: "+cnome+
+					"\nCodice fiscale: "+cf+
+					"\nData di nascita: "+data;
+				if(document.getElementById("M").checked)
+				{
+					dati+="\nSesso: Maschio";
+				}
+				else
+				{
+					dati+="\nSesso: Femmina";
+				}
+            
+				let c=1;
+				for (let i=0; i<arr_checkbox.length; i++)
+				{
+					if (arr_checkbox[i].checked==true)
+					{
+						dati+="\nHobby "+c+": "+arr_checkbox[i].value;
+						c++;
+					}
+				}
+				dati+="\nNazione: "+nazione;
+				alert(dati);
+            
+				return true;
+			}
+		</script>
+	</head>
+
+
+	<body>
+		<h1>Compilare tutti i campi del form</h1>
+		<form action="" method="POST"> 
+			<br><label>Nome:</label><br>
+			<input type="text" id="nome" name="nome">
+        
+			<br><br><label>Cognome:</label><br>
+			<input type="text"  id="cognome" name="cognome">
+        
+			<br><br><label>Codice fiscale:</label><br>
+			<input type="text" id="cf" name="cf">
+        
+			<br><br><label>Data di nascita:</label><br>
+			<input type="date" id="data" name="date">
+        
+			<br><br><label>Sesso:</label><br>
+			<input type="radio" name="sesso" id="M" value="maschio">
+			<label>Maschio</label><br>
+			<input type="radio" name="sesso" id="F "value="femmina">
+			<label>Femmina</label>
+        
+			<br><br><label>Hobby (selezionarne alneno due):</label><br>
+			<input type="checkbox" name="hobby" value="sport">
+			<label>Sport</label><br>
+			<input type="checkbox" name="hobby" value="lettura">
+			<label>Lettura</label><br>
+			<input type="checkbox" name="hobby" value="cinema">
+			<label>Cinema</label><br>
+			<input type="checkbox" name="hobby" value="internet">
+			<label>Internet</label>
+        
+			<br><br><label>Nazione:</label><br>
+			<select id="nazione" name="nazione">
+				<option value="" selected></option>
+				<option value="Italia">Italia</option>
+				<option value="Francia">Francia</option>
+				<option value="Germania">Germania</option>
+				<option value="Spagna">Spagna</option>
+			</select>
+          
+			<br><br><input type="button" value="Invia" onclick="validazione()">
+		</form>
+	</body>
+</html>
