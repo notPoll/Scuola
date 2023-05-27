@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica_25/05/2023</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Modulo di abbonamento alla Pay-Tv</h1>
+    <form>
+        <label>Nome:</label> 
+        <br>
+        <input type="text" id="Nome" name="Nome">
+        <br>
+        <br>
+        <label>Cognome:</label>    
+        <br>
+        <input type="text" id="Cognome" name="Cognome">
+        <br>
+        <br>
+        <label>Codice fiscale:</label>
+        <br>
+        <input type="text" id="CodFisc" name="CodFisc" maxlength="16" minlength="0">
+        <br>
+        <br>
+        <label>Provincia di residenza:</label>
+        <br>
+        <select id="ProvRes" name="ProvRes">
+            <option value="" selected></option>
+            <option value="Milano">Milano</option>
+            <option value="Roma">Roma</option>
+            <option value="Torino">Torino</option>
+        </select>
+        <br>
+        <br>
+        <label>Data inizio:</label>
+        <br>
+        <input type="date" id="Data" name="Data">
+        <br>
+        <br>
+        <label>Durata:</label>
+        <br>
+        <input type="radio" id="Mensile" name="Durata"> Mensile(30 giorni) 
+        <br>
+        <input type="radio" id="Annuale" name="Durata"> Annuale(365 giorni)
+        <br>
+        <br>
+        <label>Pacchetti (selezionare almeno due):</label>
+        <br>
+			<input type="checkbox" name="Pack" value="Sport">Sport
+            <br>
+			<input type="checkbox" name="Pack" value="Calcio">Calcio
+            <br>
+			<input type="checkbox" name="Pack" value="Cinema">Cinema
+            <br>
+			<input type="checkbox" name="Pack" value="Serie TV">Serie Tv
+            <br>
+            <br>
+        <input type="button" value="Invia" onclick="Premuto()">
+        <!-- <p id="Importo"></p>  -->
+    </form>
+</body>
+</html>
