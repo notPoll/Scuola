@@ -1,0 +1,24 @@
+create table Giocatore(
+    CodiceFiscale varchar,
+    Nome varchar(20) not null,
+    Cognome varchar(20) not null,
+    DataNascita int not null,
+    Altezza int not null,
+    primary key(CodiceFiscale)
+)
+create table Partita(
+    ID varchar(10),
+    Orario int not null,
+    Giorno int not null,
+    Stadio varchar(20),
+    primary key(ID)
+)
+create table Squadra(
+    IDSquadra varchar(10),
+    Nome varchar(20) not null,
+    Nazione varchar(20) not null,
+    Bandiera varchar(20) not null,
+    AnnoNascita int, not null,
+    primary key(IDSquadra)
+
+)
