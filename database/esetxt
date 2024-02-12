@@ -7,14 +7,14 @@ create table Giocatore(
     primary key(CodiceFiscale)
 )
 create table Partita(
-    ID varchar(10),
+    ID varchar(10), auto_increment,
     Orario int not null,
     Giorno int not null,
     Stadio varchar(20),
     primary key(ID)
 )
 create table Squadra(
-    IDSquadra varchar(10),
+    IDSquadra varchar(10), auto_increment,
     Nome varchar(20) not null,
     Nazione varchar(20) not null,
     Bandiera varchar(20) not null,
