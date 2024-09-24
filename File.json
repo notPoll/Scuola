@@ -1,0 +1,117 @@
+[
+    {
+        "id": "1",
+        "type": "http in",
+        "z": "flow_id",
+        "name": "Web Page",
+        "url": "/games",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "template_node"
+            ]
+        ]
+    },
+    {
+        "id": "template_node",
+        "type": "template",
+        "z": "flow_id",
+        "name": "HTML Page",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html><html><head><title>FreeToGame</title><style>body { font-family: Arial, sans-serif; }.game { border: 1px solid #ccc; padding: 10px; margin: 10px; }.game img { max-width: 200px; }</style></head><body><h1>FreeToGame API - Free Games List</h1><div id=\"games\"></div><script>fetch('/api/games').then(response => response.json()).then(data => {const gamesDiv = document.getElementById('games');data.forEach(game => {const gameDiv = document.createElement('div');gameDiv.className = 'game';gameDiv.innerHTML = `<h2>${game.title}</h2><p>${game.short_description}</p><img src=\"${game.thumbnail}\" alt=\"${game.title}\" /><p><a href=\"${game.game_url}\" target=\"_blank\">Play Now</a></p>`;gamesDiv.appendChild(gameDiv);});}).catch(error => {document.getElementById('games').innerText = 'Error fetching games: ' + error.message;});</script></body></html>",
+        "output": "str",
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "http_response_node"
+            ]
+        ]
+    },
+    {
+        "id": "http_response_node",
+        "type": "http response",
+        "z": "flow_id",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 500,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2",
+        "type": "http in",
+        "z": "flow_id",
+        "name": "Games API",
+        "url": "/api/games",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "function_node"
+            ]
+        ]
+    },
+    {
+        "id": "function_node",
+        "type": "function",
+        "z": "flow_id",
+        "name": "Get Games Data",
+        "func": "const axios = require('axios');\n\naxios.get('https://www.freetogame.com/api/games')\n    .then(response => {\n        msg.payload = response.data;\n        msg.headers = {\n            'Access-Control-Allow-Origin': '*',\n            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',\n            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'\n        };\n        node.send(msg);\n    })\n    .catch(error => {\n        msg.payload = { error: error.message };\n        msg.headers = {\n            'Access-Control-Allow-Origin': '*',\n            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',\n            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'\n        };\n        node.send(msg);\n    });\n\nreturn null;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "http_response_node2"
+            ]
+        ]
+    },
+    {
+        "id": "http_response_node2",
+        "type": "http response",
+        "z": "flow_id",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 500,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3",
+        "type": "http in",
+        "z": "flow_id",
+        "name": "Options",
+        "url": "/api/games",
+        "method": "options",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "cors_function_node"
+            ]
+        ]
+    },
+    {
+        "id": "cors_function_node",
+        "type": "function",
+        "z": "flow_id",
+        "name": "CORS Options Response",
+        "func": "
